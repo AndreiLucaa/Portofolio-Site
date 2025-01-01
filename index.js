@@ -98,4 +98,31 @@ document.addEventListener('DOMContentLoaded', () => {
             closeMobileMenu();
         }
     });
+
+    // Download functionality
+    const downloadButton = document.querySelector('.label-download .input');
+    const cancelDownload = document.querySelector('.label-download .square');
+    const openButton = document.querySelector('.label-download #open-title');
+    let downloadLink = null;
+
+    downloadButton.addEventListener('change', function(e) {
+        if (this.checked) {
+            downloadLink = document.createElement('a');
+            downloadLink.href = 'imagini/cv.pdf';
+            downloadLink.download = 'cv.pdf';
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+        }
+    });
+
+    cancelDownload.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        downloadButton.checked = false;
+    });
+
+    openButton.addEventListener('click', function(e) {
+        window.open('imagini/cv.pdf', '_blank');
+    });
 });
