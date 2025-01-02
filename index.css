@@ -133,6 +133,7 @@ body {
     margin-left: 280px;
     padding: 0; /* Remove padding from content container */
     flex: 1;
+    scroll-behavior: smooth;
     scroll-snap-type: y mandatory; /* Enable snap scrolling */
     overflow-y: scroll;
     height: 100vh;
@@ -233,6 +234,7 @@ footer {
         margin-left: 0;
         padding: 0;
         margin-bottom: 60px; /* Add space for footer */
+        scroll-snap-type: none;  /* Remove scroll snap on mobile */
     }
 
     .menu-button {
@@ -257,6 +259,7 @@ footer {
 
     #about.hero {
         text-align: center;
+        margin-top: 50px; /* Add top margin to avoid overlap with buttons */
     }
 
     #about .profile-mobile {
@@ -275,7 +278,8 @@ footer {
         justify-content: center;
         text-align: center;
         padding: 2rem 1rem;
-        min-height: calc(100vh - 60px); /* Adjust for footer height */
+        min-height: auto; /* Allow natural content height */
+        scroll-snap-align: none;  /* Remove scroll snap points */
     }
 
     .section > *, .hero > * {
@@ -317,6 +321,10 @@ footer {
 
     .social-links {
         justify-content: center;
+    }
+
+    .hero h1 {
+        margin-top: 20px; /* Additional spacing for the title */
     }
 }
 
@@ -1511,6 +1519,59 @@ footer,
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* ...existing code... */
+
+/* Update flip card styles */
+.flip-card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Desktop styles - mobile image first */
+@media screen and (min-width: 1086px) {
+    .flip-card-front {
+        transform: rotateY(0deg);
+    }
+    
+    .flip-card-back {
+        transform: rotateY(180deg);
+    }
+
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+}
+
+/* Mobile styles - keep as is */
+@media screen and (max-width: 1085px) {
+    .flip-card-front {
+        transform: rotateY(0deg);
+    }
+    
+    .flip-card-back {
+        transform: rotateY(180deg);
+    }
+
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
 }
 
 /* ...existing code... */
