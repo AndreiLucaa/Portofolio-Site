@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768 && 
+        if (window.innerWidth <= 1085 && 
             !e.target.closest('.mobile-menu') && 
             !e.target.closest('.menu-button') && 
             mobileMenu.classList.contains('active')) {
@@ -125,4 +125,18 @@ document.addEventListener('DOMContentLoaded', () => {
     openButton.addEventListener('click', function(e) {
         window.open('imagini/cv.pdf', '_blank');
     });
+
+    // Add flip card functionality
+    /*
+    const flipCards = document.querySelectorAll('.flip-card');
+
+    flipCards.forEach(card => {
+        card.addEventListener('click', function() {
+            if (window.innerWidth <= 1085) {
+                this.classList.toggle('flipped');
+            }
+        });
+    });
+    */
+
 });
