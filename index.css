@@ -134,9 +134,8 @@ body {
     padding: 0; /* Remove padding from content container */
     flex: 1;
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory; /* Enable snap scrolling */
-    overflow-y: scroll;
-    height: 100vh;
+    overflow-y: auto; /* Changed from scroll */
+    min-height: 100vh;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none; /* IE and Edge */
 }
@@ -209,8 +208,7 @@ footer {
     background-color: white;
     margin-left: 280px;
     transition: all 0.2s ease;
-    position: relative; /* Add this */
-    z-index: 10; /* Add this */
+    position: static; /* Changed from relative */
 }
 
 @media (max-width: 1085px) {
@@ -233,7 +231,7 @@ footer {
     .content {
         margin-left: 0;
         padding: 0;
-        margin-bottom: 60px; /* Add space for footer */
+        margin-bottom: 0; /* Remove footer spacing */
         scroll-snap-type: none;  /* Remove scroll snap on mobile */
     }
 
@@ -252,9 +250,7 @@ footer {
     footer {
         margin-left: 0;
         width: 100%;
-        position: relative;
-        bottom: 0;
-        left: 0;
+        position: static; /* Ensure static positioning */
     }
 
     #about.hero {
