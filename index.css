@@ -2004,7 +2004,7 @@ footer,
 
 /* Submit Button */
 .submit-btn {
-    margin-top: 1.5rem; /* Add spacing above submit button */
+    margin-top: 1.5rem;
     position: relative;
     padding: 0.8rem 2rem;
     background: #3D7EAE;
@@ -2015,15 +2015,13 @@ footer,
     cursor: pointer;
     overflow: hidden;
     transition: all 0.3s ease;
-}
-
-.submit-btn:hover {
-    background: #2d5d8e;
+    font-family: 'Outfit', sans-serif; /* Add site font */
 }
 
 .submit-text {
     position: relative;
     z-index: 1;
+    font-family: 'Outfit', sans-serif; /* Add site font */
 }
 
 .submit-success {
