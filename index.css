@@ -1591,3 +1591,140 @@ footer,
 }
 
 /* ...existing code... */
+
+/* ...existing code... */
+
+.location {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.dark-mode .location {
+    color: #aaa;
+}
+
+/* ...existing code... */
+
+/* Fade in animation for sections */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide in animation for cards */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply animations to elements */
+.hero > * {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.hero h1 { animation-delay: 0.2s; }
+.hero .subtitle { animation-delay: 0.4s; }
+.hero .about-me { animation-delay: 0.6s; }
+.hero .social-links { animation-delay: 0.8s; }
+.hero .skills { animation-delay: 1s; }
+
+.project-card {
+    animation: slideIn 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+.project-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Enhanced hover effects */
+.nav-links a {
+    /* ...existing styles... */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-links a:hover {
+    /* ...existing styles... */
+    transform: translateX(5px);
+}
+
+.project-card {
+    /* ...existing styles... */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+    /* ...existing styles... */
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.social-links a {
+    /* ...existing styles... */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-links a:hover {
+    /* ...existing styles... */
+    transform: translateY(-5px) scale(1.1);
+}
+
+/* Responsive animations */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ...existing code... */
+
+/* Updated scroll animations */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform; /* Optimize performance */
+}
+
+.scroll-animate.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger animations for elements */
+.scroll-animate.active.delay-1 { transition-delay: 0.1s; }
+.scroll-animate.active.delay-2 { transition-delay: 0.2s; }
+.scroll-animate.active.delay-3 { transition-delay: 0.3s; }
+.scroll-animate.active.delay-4 { transition-delay: 0.4s; }
+
+/* Reset delays when not active */
+.scroll-animate:not(.active) {
+    transition-delay: 0s;
+}
+
+/* Disable animations if user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-animate {
+        transition: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ...existing code... */

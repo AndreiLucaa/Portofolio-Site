@@ -126,6 +126,42 @@ document.addEventListener('DOMContentLoaded', () => {
         window.open('imagini/cv.pdf', '_blank');
     });
 
+    // Add scroll animations
+    const scrollElements = document.querySelectorAll('section h2, .project-card, .timeline-item, .gallery-item');
+    
+    // Add scroll-animate class to all elements we want to animate
+    scrollElements.forEach((el, index) => {
+        el.classList.add('scroll-animate');
+        if (el.classList.contains('project-card')) {
+            el.classList.add(`delay-${index % 4 + 1}`);
+        }
+    });
+
+    // Updated scroll observer with animation reset
+    const scrollObserver = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                // When element leaves viewport
+                if (!entry.isIntersecting) {
+                    // Reset the animation by removing active class
+                    entry.target.classList.remove('active');
+                    // Force a reflow to reset the animation
+                    void entry.target.offsetWidth;
+                } else {
+                    // Add active class to trigger animation when in view
+                    entry.target.classList.add('active');
+                }
+            });
+        },
+        {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2 // Trigger when 20% of element is visible
+        }
+    );
+
+    scrollElements.forEach(el => scrollObserver.observe(el));
+
     // Add flip card functionality
     /*
     const flipCards = document.querySelectorAll('.flip-card');
