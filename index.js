@@ -175,4 +175,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     */
 
+    // Contact Form Handling
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('.submit-btn');
+            submitBtn.classList.add('loading');
+            
+            // Form data
+            const formData = {
+                name: this.name.value,
+                email: this.email.value,
+                subject: this.subject.value,
+                message: this.message.value
+            };
+
+            try {
+                // Simulate form submission
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                
+                // Success state
+                submitBtn.classList.remove('loading');
+                submitBtn.classList.add('success');
+                
+                // Reset form
+                setTimeout(() => {
+                    this.reset();
+                    submitBtn.classList.remove('success');
+                }, 3000);
+                
+                // Here you would typically send the formData to your backend
+                console.log('Form submitted:', formData);
+                
+            } catch (error) {
+                console.error('Error:', error);
+                submitBtn.classList.remove('loading');
+                // Handle error state
+            }
+        });
+    }
+
 });
