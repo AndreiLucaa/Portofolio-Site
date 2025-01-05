@@ -130,12 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollElements = document.querySelectorAll('section h2, .project-card, .timeline-item, .gallery-item');
     
     // Add scroll-animate class to all elements we want to animate
-    scrollElements.forEach((el, index) => {
-        el.classList.add('scroll-animate');
-        if (el.classList.contains('project-card')) {
-            el.classList.add(`delay-${index % 4 + 1}`);
-        }
-    });
+    
 
     // Updated scroll observer with animation reset
     const scrollObserver = new IntersectionObserver(
@@ -161,19 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     scrollElements.forEach(el => scrollObserver.observe(el));
-
-    // Add flip card functionality
-    /*
-    const flipCards = document.querySelectorAll('.flip-card');
-
-    flipCards.forEach(card => {
-        card.addEventListener('click', function() {
-            if (window.innerWidth <= 1085) {
-                this.classList.toggle('flipped');
-            }
-        });
-    });
-    */
 
     // Contact Form Handling
     const contactForm = document.getElementById('contactForm');

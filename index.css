@@ -195,7 +195,7 @@ body {
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
-    transition: all 0.2s ease;
+    transition: all 0.15s ease;
 }
 
 .tag i {
@@ -423,7 +423,7 @@ footer {
 
 .dark-mode .mobile-menu {
     background: rgba(18, 18, 18, 0.98);
-    transition: all 0.2s ease;
+    transition: all 0.1s ease;
 }
 
 .dark-mode .mobile-menu-backdrop {
@@ -523,11 +523,11 @@ footer {
     background-color: #f8f8f8;
     padding: 1.5rem;
     border-radius: 8px;
-    transition: transform 0.3s ease;
+    transform: translateY(0);
     display: flex;
     flex-direction: column;
     min-height: 200px;
-    transition: all 0.2s ease;
+    transition: transform 0.1s ease, background-color 0.1s ease;
 }
 
 .project-link {
@@ -537,7 +537,7 @@ footer {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    transition: color 0.2s ease;
+    transition: color 0.1s ease;
 }
 
 .project-link:hover {
@@ -570,6 +570,7 @@ footer {
 
 .project-card:hover {
     transform: translateY(-5px);
+    transition: transform 0.1s ease, background-color 0.1s ease;
 }
 
 .timeline {
@@ -679,7 +680,7 @@ body.dark-mode {
 .dark-mode .sidebar {
     background-color: #1e1e1e;
     box-shadow: 2px 0 5px rgba(0,0,0,0.3);
-    transition: all 0.2s ease;
+    transition: all 0.1s ease;
 }
 
 .dark-mode .nav-links a {
@@ -697,7 +698,7 @@ body.dark-mode {
 .dark-mode section {
     background-color: #121212;
     color: #ffffff;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition: background-color 0.1s ease, color 0.1s ease;
 }
 
 .dark-mode #projects,
@@ -708,13 +709,13 @@ body.dark-mode {
 
 .dark-mode .project-card {
     background-color: #1e1e1e;
-    transition: all 0.2s ease;
+    transition: all 0.1s ease;
 }
 
 .dark-mode .tag {
     background-color: #2d2d2d;
     color: #ffffff;
-    transition: all 0.2s ease;
+    transition: all 0.1s ease;
 }
 
 .dark-mode .timeline-item {
@@ -725,12 +726,12 @@ body.dark-mode {
 .dark-mode footer {
     background-color: #1e1e1e;
     color: #ffffff;
-    transition: all 0.2s ease;
+    transition: all 0.1s ease;
 }
 
 .dark-mode .download-btn {
     background-color: #2d2d2d;
-    transition: all 0.2s ease;
+    transition: all 0.1s ease;
 }
 
 .dark-mode .download-btn:hover {
@@ -739,7 +740,7 @@ body.dark-mode {
 
 .dark-mode .mobile-menu {
     background: rgba(18, 18, 18, 0.98);
-    transition: all 0.2s ease;
+    transition: all 0.1s ease;
 }
 
 .dark-mode .close-menu span {
@@ -856,7 +857,7 @@ body.dark-mode {
     color: #333;
     font-size: 1.5rem;
     transition: transform 0.3s ease;
-    transition: all 0.2s ease;
+    transition: all 0.1s ease;
 }
 
 .social-links a:hover {
@@ -865,7 +866,7 @@ body.dark-mode {
 
 .dark-mode .social-links a {
     color: #ffffff;
-    transition: all 0.2s ease;
+    transition: all 0.1s ease;
 }
 
 /* Root level transitions - change from 0.2s to 0.15s */
@@ -1161,7 +1162,7 @@ footer,
     height: 2px;
     background: #333;
     margin: 4px 0;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
 .dark-mode .menu-button {
@@ -2071,3 +2072,75 @@ footer,
         align-items: center;
     }
 }
+
+/* Education Section Styles */
+.education-header {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.university-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background-color: #3D7EAE;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.university-icon i {
+    font-size: 1.5rem;
+}
+
+.education-info {
+    flex: 1;
+}
+
+.education-info h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.education-info p {
+    margin: 0.25rem 0;
+    color: #666;
+}
+
+.education-info h4 {
+    color: #3D7EAE;
+    margin: 0.5rem 0;
+}
+
+/* Dark mode styles */
+.dark-mode .university-icon {
+    background-color: #5CA1D5;
+}
+
+.dark-mode .education-info p {
+    color: #aaa;
+}
+
+.dark-mode .education-info h4 {
+    color: #5CA1D5;
+}
+
+/* Mobile responsive styles */
+@media screen and (max-width: 768px) {
+    .education-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .university-icon {
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* ...existing code... */
