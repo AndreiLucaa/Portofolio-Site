@@ -4,7 +4,7 @@ Welcome to my Personal Portfolio Website repository! This project showcases my s
 
 ## 🌐 Live Demo
 
-Check out the live version of the website here: https://andreilucaa.github.io/Portofolio-Site/.
+Check out the live version of the website here: https://andreilucaa.github.io/Portofolio-Site/
 
 ## ✨ Features
 	•	Responsive Design: Fully optimized for all devices, including mobile, tablet, and desktop.
